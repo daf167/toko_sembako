@@ -9,8 +9,11 @@ class CategoryController extends Controller
 {
     public function index()
     {
+        $perPage = $this->perPage();
+
         return view('master.categories.index', [
-            'categories' => Category::withCount('items')->latest()->paginate(10),
+            'categories' => Category::withCount('items')->latest()->paginate($perPage)->withQueryString(),
+            'perPage' => $perPage,
         ]);
     }
 
@@ -53,6 +56,16 @@ class CategoryController extends Controller
 
     public function destroy(Category $category)
     {
+        $hasAvailableStock = $category->items()
+            ->where('current_stock', '>', 0)
+            ->exists();
+
+        if ($hasAvailableStock) {
+            return back()->withErrors([
+                'category' => 'Kategori tidak dapat dihapus karena masih memiliki barang dengan stok tersedia.',
+            ]);
+        }
+
         $category->delete();
 
         return redirect()->route('categories.index')->with('success', 'Kategori berhasil dihapus.');

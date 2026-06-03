@@ -14,6 +14,12 @@
             <i class="bi bi-people me-2"></i>Pengguna
         </a>
     @endif
+    @if(in_array(auth()->user()->role, ['staff', 'owner'], true))
+        <div class="text-uppercase small text-white-50 mt-3 mb-1 px-2">Produk</div>
+        <a class="nav-link {{ request()->routeIs('items.*') ? 'active' : '' }}" href="{{ route('items.index') }}">
+            <i class="bi bi-box-seam me-2"></i>Daftar Produk
+        </a>
+    @endif
     @if(in_array(auth()->user()->role, ['admin', 'staff'], true))
         <div class="text-uppercase small text-white-50 mt-3 mb-1 px-2">Transaksi</div>
         <a class="nav-link {{ request()->routeIs('inventory.*') ? 'active' : '' }}" href="{{ route('inventory.stock') }}">

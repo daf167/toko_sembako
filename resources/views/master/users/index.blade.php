@@ -8,6 +8,7 @@
     <a class="btn btn-primary" href="{{ route('users.create') }}"><i class="bi bi-plus-lg me-1"></i>Tambah</a>
 </div>
 <div class="table-wrap bg-white p-3">
+    @include('components.table-controls', ['paginator' => $users, 'perPage' => $perPage, 'id' => 'users_per_page'])
     <div class="table-responsive">
         <table class="table table-hover">
             <thead><tr><th>Nama</th><th>Email</th><th>Role</th><th class="text-end">Aksi</th></tr></thead>
@@ -33,6 +34,8 @@
             </tbody>
         </table>
     </div>
-    {{ $users->links() }}
+    <div class="mt-3">
+        {{ $users->links() }}
+    </div>
 </div>
 @endsection

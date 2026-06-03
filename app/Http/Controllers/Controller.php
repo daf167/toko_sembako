@@ -9,4 +9,11 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
+
+    protected function perPage(): int
+    {
+        $perPage = (int) request('per_page', 10);
+
+        return in_array($perPage, [5, 10, 25, 50, 100], true) ? $perPage : 10;
+    }
 }

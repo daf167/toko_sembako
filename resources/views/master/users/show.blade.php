@@ -13,12 +13,15 @@
     <h2 class="h6 mb-3">Riwayat Transaksi</h2>
     <div class="table-responsive">
         <table class="table table-hover">
-            <thead><tr><th>Tanggal</th><th>Barang</th><th>Tipe</th><th>Jumlah</th><th>Catatan</th></tr></thead>
+            <thead><tr><th>Tanggal</th><th>Barang</th><th>Tipe</th><th>Jumlah</th><th>Stok Awal</th><th>Stok Akhir</th><th>Catatan</th></tr></thead>
             <tbody>
                 @forelse($user->inventoryLogs as $log)
-                    <tr><td>{{ $log->date->format('d/m/Y') }}</td><td>{{ $log->item->name }}</td><td>{{ $log->type }}</td><td>{{ $log->quantity }}</td><td>{{ $log->notes ?? '-' }}</td></tr>
+                    @php
+                        $itemName = $log->item?->name ?? ($log->item_name_snapshot ? 'Produk dihapus - '.$log->item_name_snapshot : 'Produk dihapus');
+                    @endphp
+                    <tr><td>{{ $log->date->format('d/m/Y') }}</td><td>{{ $itemName }}</td><td>{{ $log->type }}</td><td>{{ $log->quantity }}</td><td>{{ $log->stock_before ?? '-' }}</td><td>{{ $log->stock_after ?? '-' }}</td><td>{{ $log->notes ?? '-' }}</td></tr>
                 @empty
-                    <tr><td colspan="5" class="text-center text-secondary">Belum ada transaksi.</td></tr>
+                    <tr><td colspan="7" class="text-center text-secondary">Belum ada transaksi.</td></tr>
                 @endforelse
             </tbody>
         </table>

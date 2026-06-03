@@ -22,27 +22,37 @@
     </div>
 </div>
 <div class="table-wrap bg-white p-3">
+    @include('components.table-controls', ['paginator' => $logs, 'perPage' => $perPage, 'id' => 'reports_per_page'])
     <div class="table-responsive">
         <table class="table table-hover">
-            <thead><tr><th>Tanggal</th><th>Kode</th><th>Barang</th><th>Kategori</th><th>Tipe</th><th>Jumlah</th><th>Petugas</th><th>Catatan</th></tr></thead>
+            <thead><tr><th>Tanggal</th><th>Kode</th><th>Barang</th><th>Kategori</th><th>Tipe</th><th>Jumlah</th><th>Stok Awal</th><th>Stok Akhir</th><th>Petugas</th><th>Catatan</th></tr></thead>
             <tbody>
                 @forelse($logs as $log)
+                    @php
+                        $itemCode = $log->item?->item_code ?? $log->item_code_snapshot ?? '-';
+                        $itemName = $log->item?->name ?? ($log->item_name_snapshot ? 'Produk dihapus - '.$log->item_name_snapshot : 'Produk dihapus');
+                        $categoryName = $log->item?->category?->name ?? $log->category_name_snapshot ?? '-';
+                    @endphp
                     <tr>
                         <td>{{ $log->date->format('d/m/Y') }}</td>
-                        <td>{{ $log->item->item_code }}</td>
-                        <td class="fw-semibold">{{ $log->item->name }}</td>
-                        <td>{{ $log->item->category->name }}</td>
+                        <td>{{ $itemCode }}</td>
+                        <td class="fw-semibold">{{ $itemName }}</td>
+                        <td>{{ $categoryName }}</td>
                         <td><span class="badge {{ $log->type === 'masuk' ? 'text-bg-success' : 'text-bg-warning' }}">{{ $log->type }}</span></td>
                         <td>{{ $log->quantity }}</td>
+                        <td>{{ $log->stock_before ?? '-' }}</td>
+                        <td>{{ $log->stock_after ?? '-' }}</td>
                         <td>{{ $log->user->name }}</td>
                         <td>{{ $log->notes ?? '-' }}</td>
                     </tr>
                 @empty
-                    <tr><td colspan="8" class="text-center text-secondary">Tidak ada data laporan.</td></tr>
+                    <tr><td colspan="10" class="text-center text-secondary">Tidak ada data laporan.</td></tr>
                 @endforelse
             </tbody>
         </table>
     </div>
-    {{ $logs->links() }}
+    <div class="mt-3">
+        {{ $logs->links() }}
+    </div>
 </div>
 @endsection

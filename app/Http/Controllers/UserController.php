@@ -10,8 +10,11 @@ class UserController extends Controller
 {
     public function index()
     {
+        $perPage = $this->perPage();
+
         return view('master.users.index', [
-            'users' => User::latest()->paginate(10),
+            'users' => User::latest()->paginate($perPage)->withQueryString(),
+            'perPage' => $perPage,
         ]);
     }
 

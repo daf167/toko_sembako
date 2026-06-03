@@ -10,8 +10,11 @@ class ItemController extends Controller
 {
     public function index()
     {
+        $perPage = $this->perPage();
+
         return view('master.items.index', [
-            'items' => Item::with('category')->latest()->paginate(10),
+            'items' => Item::with('category')->latest()->paginate($perPage)->withQueryString(),
+            'perPage' => $perPage,
         ]);
     }
 
@@ -53,6 +56,12 @@ class ItemController extends Controller
 
     public function destroy(Item $item)
     {
+        if ($item->current_stock > 0) {
+            return back()->withErrors([
+                'item' => 'Barang tidak dapat dihapus karena stok masih tersedia.',
+            ]);
+        }
+
         $item->delete();
 
         return redirect()->route('items.index')->with('success', 'Barang berhasil dihapus.');

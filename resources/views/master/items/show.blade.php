@@ -18,12 +18,12 @@
     <h2 class="h6 mb-3">Riwayat Mutasi</h2>
     <div class="table-responsive">
         <table class="table table-hover">
-            <thead><tr><th>Tanggal</th><th>Tipe</th><th>Jumlah</th><th>Petugas</th><th>Catatan</th></tr></thead>
+            <thead><tr><th>Tanggal</th><th>Tipe</th><th>Jumlah</th><th>Stok Awal</th><th>Stok Akhir</th><th>Petugas</th><th>Catatan</th></tr></thead>
             <tbody>
                 @forelse($item->inventoryLogs as $log)
-                    <tr><td>{{ $log->date->format('d/m/Y') }}</td><td>{{ $log->type }}</td><td>{{ $log->quantity }}</td><td>{{ $log->user->name }}</td><td>{{ $log->notes ?? '-' }}</td></tr>
+                    <tr><td>{{ $log->date->format('d/m/Y') }}</td><td>{{ $log->type }}</td><td>{{ $log->quantity }}</td><td>{{ $log->stock_before ?? '-' }}</td><td>{{ $log->stock_after ?? '-' }}</td><td>{{ $log->user->name }}</td><td>{{ $log->notes ?? '-' }}</td></tr>
                 @empty
-                    <tr><td colspan="5" class="text-center text-secondary">Belum ada mutasi.</td></tr>
+                    <tr><td colspan="7" class="text-center text-secondary">Belum ada mutasi.</td></tr>
                 @endforelse
             </tbody>
         </table>

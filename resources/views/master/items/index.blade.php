@@ -4,10 +4,13 @@
 
 @section('content')
 <div class="d-flex justify-content-between align-items-center mb-3">
-    <h1 class="h4 mb-0">Barang</h1>
-    <a class="btn btn-primary" href="{{ route('items.create') }}"><i class="bi bi-plus-lg me-1"></i>Tambah</a>
+    <h1 class="h4 mb-0">{{ in_array(auth()->user()->role, ['staff', 'owner'], true) ? 'Daftar Produk' : 'Barang' }}</h1>
+    @if(auth()->user()->role === 'admin')
+        <a class="btn btn-primary" href="{{ route('items.create') }}"><i class="bi bi-plus-lg me-1"></i>Tambah</a>
+    @endif
 </div>
 <div class="table-wrap bg-white p-3">
+    @include('components.table-controls', ['paginator' => $items, 'perPage' => $perPage, 'id' => 'items_per_page'])
     <div class="table-responsive">
         <table class="table table-hover">
             <thead><tr><th>Kode</th><th>Nama</th><th>Kategori</th><th>Stok</th><th>Minimum</th><th>Status</th><th class="text-end">Aksi</th></tr></thead>
@@ -22,12 +25,14 @@
                         <td><span class="badge {{ $item->status === 'tersedia' ? 'text-bg-success' : 'text-bg-secondary' }}">{{ $item->status }}</span></td>
                         <td class="text-end">
                             <a class="btn btn-sm btn-outline-info" href="{{ route('items.show', $item) }}">View Detail</a>
-                            <a class="btn btn-sm btn-outline-primary" href="{{ route('items.edit', $item) }}">Edit</a>
-                            <form class="d-inline" method="POST" action="{{ route('items.destroy', $item) }}" onsubmit="return confirm('Hapus barang ini?')">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-sm btn-outline-danger" type="submit">Delete</button>
-                            </form>
+                            @if(auth()->user()->role === 'admin')
+                                <a class="btn btn-sm btn-outline-primary" href="{{ route('items.edit', $item) }}">Edit</a>
+                                <form class="d-inline" method="POST" action="{{ route('items.destroy', $item) }}" onsubmit="return confirm('Barang hanya bisa dihapus jika stok sudah 0. Lanjutkan?')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-sm btn-outline-danger" type="submit">Delete</button>
+                                </form>
+                            @endif
                         </td>
                     </tr>
                 @empty
@@ -36,6 +41,8 @@
             </tbody>
         </table>
     </div>
-    {{ $items->links() }}
+    <div class="mt-3">
+        {{ $items->links() }}
+    </div>
 </div>
 @endsection

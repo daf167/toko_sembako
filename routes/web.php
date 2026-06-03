@@ -21,8 +21,13 @@ Route::middleware('auth')->group(function () {
 
     Route::middleware('role:admin')->group(function () {
         Route::resource('categories', CategoryController::class);
-        Route::resource('items', ItemController::class);
+        Route::resource('items', ItemController::class)->except(['index', 'show']);
         Route::resource('users', UserController::class);
+    });
+
+    Route::middleware('role:admin,staff,owner')->group(function () {
+        Route::get('/items', [ItemController::class, 'index'])->name('items.index');
+        Route::get('/items/{item}', [ItemController::class, 'show'])->name('items.show');
     });
 
     Route::middleware('role:admin,staff')->group(function () {

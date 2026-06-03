@@ -12,12 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('inventory_logs', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('item_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->uuid('id')->primary();
+            $table->foreignUuid('item_id')->nullable()->constrained()->nullOnDelete();
+            $table->foreignUuid('user_id')->constrained()->cascadeOnDelete();
             $table->enum('type', ['masuk', 'keluar']);
             $table->unsignedInteger('quantity');
+            $table->unsignedInteger('stock_before')->nullable();
+            $table->unsignedInteger('stock_after')->nullable();
             $table->date('date');
+            $table->string('item_code_snapshot')->nullable();
+            $table->string('item_name_snapshot')->nullable();
+            $table->string('category_name_snapshot')->nullable();
             $table->text('notes')->nullable();
             $table->timestamps();
         });
