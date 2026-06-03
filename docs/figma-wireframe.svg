@@ -1,0 +1,255 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3600" height="3000" viewBox="0 0 3600 3000" fill="none">
+  <defs>
+    <style>
+      .page{fill:#f3f4f6}.frame{fill:#fff;stroke:#111827;stroke-width:2}.box{fill:#fff;stroke:#374151;stroke-width:2}.soft{fill:#f9fafb;stroke:#6b7280;stroke-width:1.5}.dark{fill:#e5e7eb;stroke:#374151;stroke-width:2}.line{stroke:#9ca3af;stroke-width:1.5}
+      .txt{fill:#111827;font-family:Arial,Helvetica,sans-serif}.muted{fill:#6b7280;font-family:Arial,Helvetica,sans-serif}.title{font-size:30px;font-weight:700}.h{font-size:20px;font-weight:700}.b{font-size:15px}.s{font-size:12px}.xs{font-size:10px}
+    </style>
+  </defs>
+
+  <rect width="3600" height="3000" fill="#e5e7eb"/>
+  <text x="60" y="70" class="txt title">Wireframe Figma - Aplikasi Persediaan Barang Toko Sembako</text>
+  <text x="60" y="102" class="muted b">Low-fidelity wireframe SVG. Import ke Figma dengan drag &amp; drop file ini ke canvas.</text>
+
+  <!-- Components legend -->
+  <g transform="translate(60 130)">
+    <rect width="900" height="92" rx="8" class="frame"/>
+    <text x="24" y="34" class="txt h">Komponen Utama</text>
+    <rect x="24" y="52" width="90" height="24" rx="4" class="soft"/><text x="134" y="69" class="muted s">Button / CTA</text>
+    <rect x="260" y="52" width="110" height="24" rx="4" class="box"/><text x="392" y="69" class="muted s">Input / Select</text>
+    <rect x="520" y="52" width="120" height="24" rx="4" class="dark"/><text x="662" y="69" class="muted s">Card / Panel</text>
+  </g>
+
+  <!-- Helper symbols -->
+  <!-- Desktop shell: sidebar + topbar + body -->
+
+  <!-- Login -->
+  <g transform="translate(60 290)">
+    <text x="0" y="-20" class="txt h">01. Login</text>
+    <rect width="520" height="420" rx="14" class="page"/>
+    <rect x="145" y="55" width="230" height="310" rx="8" class="frame"/>
+    <rect x="184" y="86" width="152" height="24" rx="3" class="dark"/>
+    <rect x="172" y="125" width="176" height="16" rx="3" class="soft"/>
+    <text x="174" y="176" class="txt s">Email</text>
+    <rect x="174" y="188" width="172" height="34" rx="4" class="box"/>
+    <text x="174" y="252" class="txt s">Password</text>
+    <rect x="174" y="264" width="172" height="34" rx="4" class="box"/>
+    <rect x="174" y="318" width="14" height="14" rx="2" class="box"/>
+    <text x="198" y="330" class="muted s">Ingat saya</text>
+    <rect x="174" y="348" width="172" height="36" rx="5" class="dark"/>
+    <text x="260" y="371" text-anchor="middle" class="txt s">Login</text>
+  </g>
+
+  <!-- Dashboard Admin -->
+  <g transform="translate(640 290)">
+    <text x="0" y="-20" class="txt h">02. Dashboard Admin</text>
+    <rect width="900" height="520" rx="14" class="page"/>
+    <rect width="190" height="520" rx="14" class="dark"/>
+    <rect x="170" width="20" height="520" class="dark"/>
+    <text x="22" y="42" class="txt h">Brand</text>
+    <rect x="20" y="76" width="150" height="34" rx="5" class="box"/><text x="40" y="98" class="txt s">Dashboard</text>
+    <text x="22" y="150" class="muted xs">MASTER DATA</text>
+    <text x="40" y="184" class="txt s">Kategori</text>
+    <text x="40" y="218" class="txt s">Barang</text>
+    <text x="40" y="252" class="txt s">Pengguna</text>
+    <text x="22" y="306" class="muted xs">TRANSAKSI</text>
+    <text x="40" y="340" class="txt s">Stok Masuk/Keluar</text>
+    <text x="22" y="394" class="muted xs">LAPORAN</text>
+    <text x="40" y="428" class="txt s">Mutasi Stok</text>
+    <rect x="190" y="0" width="710" height="70" rx="0" class="frame"/>
+    <rect x="220" y="18" width="150" height="20" rx="3" class="dark"/><rect x="220" y="44" width="230" height="12" rx="3" class="soft"/>
+    <rect x="740" y="18" width="86" height="20" rx="3" class="dark"/><rect x="840" y="18" width="52" height="30" rx="4" class="box"/>
+    <g transform="translate(220 105)">
+      <rect width="130" height="74" rx="7" class="frame"/><rect x="16" y="20" width="36" height="36" rx="5" class="dark"/><rect x="68" y="22" width="76" height="14" rx="3" class="soft"/><rect x="68" y="46" width="30" height="20" rx="3" class="dark"/>
+    </g>
+    <g transform="translate(364 105)"><rect width="130" height="74" rx="7" class="frame"/><rect x="16" y="20" width="36" height="36" rx="5" class="dark"/><rect x="68" y="22" width="76" height="14" rx="3" class="soft"/><rect x="68" y="46" width="30" height="20" rx="3" class="dark"/></g>
+    <g transform="translate(508 105)"><rect width="130" height="74" rx="7" class="frame"/><rect x="16" y="20" width="36" height="36" rx="5" class="dark"/><rect x="68" y="22" width="76" height="14" rx="3" class="soft"/><rect x="68" y="46" width="30" height="20" rx="3" class="dark"/></g>
+    <g transform="translate(652 105)"><rect width="130" height="74" rx="7" class="frame"/><rect x="16" y="20" width="36" height="36" rx="5" class="dark"/><rect x="68" y="22" width="76" height="14" rx="3" class="soft"/><rect x="68" y="46" width="30" height="20" rx="3" class="dark"/></g>
+    <g transform="translate(796 105)"><rect width="74" height="74" rx="7" class="frame"/><rect x="14" y="18" width="30" height="30" rx="5" class="dark"/><rect x="14" y="54" width="42" height="12" rx="3" class="soft"/></g>
+    <rect x="220" y="215" width="340" height="205" rx="7" class="frame"/>
+    <text x="240" y="248" class="txt h">5 Stok Tertinggi</text>
+    <line x1="240" y1="270" x2="540" y2="270" class="line"/>
+    <rect x="240" y="294" width="180" height="16" rx="3" class="soft"/><rect x="492" y="294" width="30" height="16" rx="3" class="dark"/>
+    <rect x="240" y="334" width="180" height="16" rx="3" class="soft"/><rect x="492" y="334" width="30" height="16" rx="3" class="dark"/>
+    <rect x="590" y="215" width="280" height="205" rx="7" class="frame"/>
+    <text x="610" y="248" class="txt h">5 Stok Terendah</text>
+    <line x1="610" y1="270" x2="850" y2="270" class="line"/>
+    <rect x="610" y="294" width="160" height="16" rx="3" class="soft"/><rect x="822" y="294" width="30" height="16" rx="3" class="dark"/>
+    <rect x="610" y="334" width="160" height="16" rx="3" class="soft"/><rect x="822" y="334" width="30" height="16" rx="3" class="dark"/>
+  </g>
+
+  <!-- Dashboard Staff -->
+  <g transform="translate(1600 290)">
+    <text x="0" y="-20" class="txt h">03. Dashboard Staff</text>
+    <rect width="560" height="420" rx="14" class="page"/>
+    <rect width="150" height="420" rx="14" class="dark"/><rect x="130" width="20" height="420" class="dark"/>
+    <text x="18" y="42" class="txt h">Brand</text>
+    <rect x="16" y="76" width="118" height="34" rx="5" class="box"/><text x="34" y="98" class="txt s">Dashboard</text>
+    <text x="18" y="154" class="muted xs">TRANSAKSI</text><text x="32" y="188" class="txt s">Stok Masuk/Keluar</text>
+    <text x="18" y="244" class="muted xs">LAPORAN</text><text x="32" y="278" class="txt s">Mutasi Stok</text>
+    <rect x="150" width="410" height="70" class="frame"/><rect x="172" y="22" width="150" height="20" rx="3" class="dark"/><rect x="454" y="22" width="80" height="20" rx="3" class="soft"/>
+    <rect x="172" y="106" width="160" height="74" rx="7" class="frame"/><rect x="362" y="106" width="160" height="74" rx="7" class="frame"/>
+    <rect x="172" y="220" width="350" height="140" rx="7" class="frame"/>
+    <text x="196" y="255" class="txt h">Akses Staff</text><rect x="196" y="282" width="230" height="14" rx="3" class="soft"/><rect x="196" y="310" width="210" height="14" rx="3" class="soft"/>
+  </g>
+
+  <!-- Dashboard Owner -->
+  <g transform="translate(2200 290)">
+    <text x="0" y="-20" class="txt h">04. Dashboard Owner</text>
+    <rect width="560" height="420" rx="14" class="page"/>
+    <rect width="150" height="420" rx="14" class="dark"/><rect x="130" width="20" height="420" class="dark"/>
+    <text x="18" y="42" class="txt h">Brand</text>
+    <rect x="16" y="76" width="118" height="34" rx="5" class="box"/><text x="34" y="98" class="txt s">Dashboard</text>
+    <text x="18" y="154" class="muted xs">LAPORAN</text><text x="32" y="188" class="txt s">Mutasi Stok</text>
+    <rect x="150" width="410" height="70" class="frame"/><rect x="172" y="22" width="150" height="20" rx="3" class="dark"/><rect x="475" y="22" width="58" height="20" rx="3" class="soft"/>
+    <rect x="172" y="106" width="160" height="74" rx="7" class="frame"/><rect x="362" y="106" width="160" height="74" rx="7" class="frame"/>
+    <rect x="172" y="220" width="350" height="140" rx="7" class="frame"/>
+    <text x="196" y="255" class="txt h">Akses Owner</text><rect x="196" y="282" width="210" height="14" rx="3" class="soft"/><rect x="196" y="310" width="250" height="14" rx="3" class="soft"/>
+  </g>
+
+  <!-- Category screens -->
+  <g transform="translate(60 900)">
+    <text x="0" y="-20" class="txt h">05. Kategori - List</text>
+    <rect width="520" height="340" rx="14" class="page"/><rect x="28" y="28" width="464" height="284" rx="7" class="frame"/>
+    <rect x="52" y="52" width="110" height="22" rx="3" class="dark"/><rect x="402" y="48" width="66" height="30" rx="5" class="soft"/>
+    <line x1="52" y1="98" x2="468" y2="98" class="line"/>
+    <rect x="52" y="122" width="80" height="14" rx="3" class="soft"/><rect x="170" y="122" width="120" height="14" rx="3" class="soft"/><rect x="340" y="122" width="48" height="14" rx="3" class="soft"/><rect x="410" y="122" width="58" height="14" rx="3" class="soft"/>
+    <line x1="52" y1="152" x2="468" y2="152" class="line"/>
+    <rect x="52" y="176" width="80" height="14" rx="3" class="soft"/><rect x="170" y="176" width="150" height="14" rx="3" class="soft"/><rect x="410" y="176" width="58" height="14" rx="3" class="soft"/>
+    <line x1="52" y1="206" x2="468" y2="206" class="line"/>
+  </g>
+  <g transform="translate(620 900)">
+    <text x="0" y="-20" class="txt h">06. Kategori - Tambah/Edit</text>
+    <rect width="520" height="340" rx="14" class="page"/><rect x="28" y="28" width="464" height="284" rx="7" class="frame"/>
+    <rect x="52" y="56" width="150" height="22" rx="3" class="dark"/>
+    <text x="52" y="116" class="txt s">Nama Kategori</text><rect x="52" y="128" width="416" height="34" rx="4" class="box"/>
+    <text x="52" y="204" class="txt s">Deskripsi</text><rect x="52" y="216" width="416" height="70" rx="4" class="box"/>
+    <rect x="52" y="304" width="70" height="30" rx="5" class="dark"/><rect x="134" y="304" width="60" height="30" rx="5" class="soft"/>
+  </g>
+  <g transform="translate(1180 900)">
+    <text x="0" y="-20" class="txt h">07. Kategori - Detail</text>
+    <rect width="520" height="340" rx="14" class="page"/><rect x="28" y="28" width="464" height="78" rx="7" class="frame"/><rect x="52" y="54" width="130" height="20" rx="3" class="dark"/><rect x="52" y="82" width="240" height="12" rx="3" class="soft"/>
+    <rect x="28" y="130" width="464" height="184" rx="7" class="frame"/><rect x="52" y="158" width="180" height="18" rx="3" class="dark"/><line x1="52" y1="194" x2="468" y2="194" class="line"/><rect x="52" y="220" width="92" height="14" rx="3" class="soft"/><rect x="170" y="220" width="160" height="14" rx="3" class="soft"/><rect x="390" y="220" width="60" height="14" rx="3" class="soft"/>
+  </g>
+
+  <!-- Item screens -->
+  <g transform="translate(1740 900)">
+    <text x="0" y="-20" class="txt h">08. Barang - List</text>
+    <rect width="760" height="340" rx="14" class="page"/><rect x="28" y="28" width="704" height="284" rx="7" class="frame"/>
+    <rect x="52" y="52" width="100" height="22" rx="3" class="dark"/><rect x="646" y="48" width="66" height="30" rx="5" class="soft"/>
+    <line x1="52" y1="98" x2="712" y2="98" class="line"/>
+    <rect x="52" y="122" width="60" height="14" rx="3" class="soft"/><rect x="132" y="122" width="150" height="14" rx="3" class="soft"/><rect x="312" y="122" width="80" height="14" rx="3" class="soft"/><rect x="430" y="122" width="44" height="14" rx="3" class="soft"/><rect x="500" y="122" width="70" height="14" rx="3" class="soft"/><rect x="610" y="122" width="100" height="14" rx="3" class="soft"/>
+    <line x1="52" y1="152" x2="712" y2="152" class="line"/>
+    <rect x="52" y="176" width="60" height="14" rx="3" class="soft"/><rect x="132" y="176" width="150" height="14" rx="3" class="soft"/><rect x="312" y="176" width="80" height="14" rx="3" class="soft"/><rect x="610" y="176" width="100" height="14" rx="3" class="soft"/>
+  </g>
+  <g transform="translate(2540 900)">
+    <text x="0" y="-20" class="txt h">09. Barang - Tambah/Edit</text>
+    <rect width="760" height="340" rx="14" class="page"/><rect x="28" y="28" width="704" height="284" rx="7" class="frame"/>
+    <rect x="52" y="56" width="130" height="22" rx="3" class="dark"/>
+    <text x="52" y="116" class="txt s">Kategori</text><rect x="52" y="128" width="306" height="34" rx="4" class="box"/>
+    <text x="390" y="116" class="txt s">Kode Barang</text><rect x="390" y="128" width="318" height="34" rx="4" class="box"/>
+    <text x="52" y="204" class="txt s">Nama Barang</text><rect x="52" y="216" width="306" height="34" rx="4" class="box"/>
+    <text x="390" y="204" class="txt s">Stok</text><rect x="390" y="216" width="130" height="34" rx="4" class="box"/>
+    <text x="546" y="204" class="txt s">Batas Minimum</text><rect x="546" y="216" width="162" height="34" rx="4" class="box"/>
+    <rect x="52" y="286" width="70" height="30" rx="5" class="dark"/><rect x="134" y="286" width="60" height="30" rx="5" class="soft"/>
+  </g>
+
+  <!-- Item detail and user screens -->
+  <g transform="translate(60 1330)">
+    <text x="0" y="-20" class="txt h">10. Barang - Detail</text>
+    <rect width="760" height="340" rx="14" class="page"/><rect x="28" y="28" width="704" height="84" rx="7" class="frame"/><rect x="52" y="56" width="180" height="22" rx="3" class="dark"/><rect x="52" y="86" width="520" height="12" rx="3" class="soft"/>
+    <rect x="28" y="136" width="704" height="184" rx="7" class="frame"/><rect x="52" y="166" width="140" height="18" rx="3" class="dark"/><line x1="52" y1="202" x2="708" y2="202" class="line"/><rect x="52" y="228" width="90" height="14" rx="3" class="soft"/><rect x="170" y="228" width="80" height="14" rx="3" class="soft"/><rect x="300" y="228" width="80" height="14" rx="3" class="soft"/><rect x="420" y="228" width="110" height="14" rx="3" class="soft"/><rect x="560" y="228" width="130" height="14" rx="3" class="soft"/>
+  </g>
+  <g transform="translate(860 1330)">
+    <text x="0" y="-20" class="txt h">11. Pengguna - List</text>
+    <rect width="660" height="340" rx="14" class="page"/><rect x="28" y="28" width="604" height="284" rx="7" class="frame"/>
+    <rect x="52" y="52" width="110" height="22" rx="3" class="dark"/><rect x="546" y="48" width="66" height="30" rx="5" class="soft"/>
+    <line x1="52" y1="98" x2="612" y2="98" class="line"/><rect x="52" y="122" width="130" height="14" rx="3" class="soft"/><rect x="220" y="122" width="150" height="14" rx="3" class="soft"/><rect x="410" y="122" width="60" height="14" rx="3" class="soft"/><rect x="510" y="122" width="90" height="14" rx="3" class="soft"/>
+    <line x1="52" y1="152" x2="612" y2="152" class="line"/><rect x="52" y="176" width="130" height="14" rx="3" class="soft"/><rect x="220" y="176" width="150" height="14" rx="3" class="soft"/><rect x="410" y="176" width="60" height="14" rx="3" class="soft"/><rect x="510" y="176" width="90" height="14" rx="3" class="soft"/>
+  </g>
+  <g transform="translate(1560 1330)">
+    <text x="0" y="-20" class="txt h">12. Pengguna - Tambah/Edit</text>
+    <rect width="760" height="340" rx="14" class="page"/><rect x="28" y="28" width="704" height="284" rx="7" class="frame"/>
+    <rect x="52" y="56" width="150" height="22" rx="3" class="dark"/>
+    <text x="52" y="116" class="txt s">Nama</text><rect x="52" y="128" width="306" height="34" rx="4" class="box"/>
+    <text x="390" y="116" class="txt s">Email</text><rect x="390" y="128" width="318" height="34" rx="4" class="box"/>
+    <text x="52" y="204" class="txt s">Role</text><rect x="52" y="216" width="306" height="34" rx="4" class="box"/>
+    <text x="390" y="204" class="txt s">Password</text><rect x="390" y="216" width="140" height="34" rx="4" class="box"/>
+    <text x="554" y="204" class="txt s">Konfirmasi</text><rect x="554" y="216" width="154" height="34" rx="4" class="box"/>
+    <rect x="52" y="286" width="70" height="30" rx="5" class="dark"/><rect x="134" y="286" width="60" height="30" rx="5" class="soft"/>
+  </g>
+  <g transform="translate(2360 1330)">
+    <text x="0" y="-20" class="txt h">13. Pengguna - Detail</text>
+    <rect width="760" height="340" rx="14" class="page"/><rect x="28" y="28" width="704" height="84" rx="7" class="frame"/><rect x="52" y="56" width="180" height="22" rx="3" class="dark"/><rect x="52" y="86" width="270" height="12" rx="3" class="soft"/>
+    <rect x="28" y="136" width="704" height="184" rx="7" class="frame"/><rect x="52" y="166" width="160" height="18" rx="3" class="dark"/><line x1="52" y1="202" x2="708" y2="202" class="line"/><rect x="52" y="228" width="90" height="14" rx="3" class="soft"/><rect x="170" y="228" width="160" height="14" rx="3" class="soft"/><rect x="360" y="228" width="70" height="14" rx="3" class="soft"/><rect x="470" y="228" width="70" height="14" rx="3" class="soft"/><rect x="570" y="228" width="120" height="14" rx="3" class="soft"/>
+  </g>
+
+  <!-- Transaction and report -->
+  <g transform="translate(60 1760)">
+    <text x="0" y="-20" class="txt h">14. Transaksi Stok Masuk/Keluar</text>
+    <rect width="1060" height="390" rx="14" class="page"/>
+    <rect x="28" y="28" width="360" height="334" rx="7" class="frame"/>
+    <rect x="52" y="56" width="180" height="22" rx="3" class="dark"/>
+    <text x="52" y="112" class="txt s">Barang</text><rect x="52" y="124" width="300" height="34" rx="4" class="box"/>
+    <text x="52" y="184" class="txt s">Tipe Transaksi</text><rect x="52" y="196" width="300" height="34" rx="4" class="box"/>
+    <text x="52" y="256" class="txt s">Jumlah</text><rect x="52" y="268" width="130" height="34" rx="4" class="box"/>
+    <text x="204" y="256" class="txt s">Tanggal</text><rect x="204" y="268" width="148" height="34" rx="4" class="box"/>
+    <rect x="52" y="326" width="130" height="30" rx="5" class="dark"/>
+    <rect x="420" y="28" width="632" height="334" rx="7" class="frame"/>
+    <rect x="444" y="56" width="170" height="22" rx="3" class="dark"/>
+    <line x1="444" y1="98" x2="1028" y2="98" class="line"/>
+    <rect x="444" y="124" width="90" height="14" rx="3" class="soft"/><rect x="560" y="124" width="160" height="14" rx="3" class="soft"/><rect x="760" y="124" width="70" height="14" rx="3" class="soft"/><rect x="870" y="124" width="70" height="14" rx="3" class="soft"/><rect x="950" y="124" width="70" height="14" rx="3" class="soft"/>
+    <line x1="444" y1="154" x2="1028" y2="154" class="line"/>
+    <rect x="444" y="180" width="90" height="14" rx="3" class="soft"/><rect x="560" y="180" width="160" height="14" rx="3" class="soft"/><rect x="760" y="180" width="70" height="14" rx="3" class="soft"/><rect x="870" y="180" width="70" height="14" rx="3" class="soft"/><rect x="950" y="180" width="70" height="14" rx="3" class="soft"/>
+  </g>
+  <g transform="translate(1180 1760)">
+    <text x="0" y="-20" class="txt h">15. Laporan Mutasi Stok</text>
+    <rect width="1160" height="390" rx="14" class="page"/>
+    <rect x="28" y="28" width="1104" height="88" rx="7" class="frame"/>
+    <text x="52" y="62" class="txt s">Start Date</text><rect x="52" y="72" width="160" height="30" rx="4" class="box"/>
+    <text x="240" y="62" class="txt s">End Date</text><rect x="240" y="72" width="160" height="30" rx="4" class="box"/>
+    <rect x="430" y="72" width="70" height="30" rx="5" class="dark"/><rect x="512" y="72" width="70" height="30" rx="5" class="soft"/>
+    <rect x="28" y="142" width="1104" height="232" rx="7" class="frame"/>
+    <line x1="52" y1="190" x2="1108" y2="190" class="line"/>
+    <rect x="52" y="162" width="90" height="14" rx="3" class="soft"/><rect x="166" y="162" width="60" height="14" rx="3" class="soft"/><rect x="260" y="162" width="160" height="14" rx="3" class="soft"/><rect x="454" y="162" width="90" height="14" rx="3" class="soft"/><rect x="582" y="162" width="70" height="14" rx="3" class="soft"/><rect x="690" y="162" width="70" height="14" rx="3" class="soft"/><rect x="800" y="162" width="110" height="14" rx="3" class="soft"/><rect x="948" y="162" width="90" height="14" rx="3" class="soft"/>
+    <rect x="52" y="218" width="90" height="14" rx="3" class="soft"/><rect x="166" y="218" width="60" height="14" rx="3" class="soft"/><rect x="260" y="218" width="160" height="14" rx="3" class="soft"/><rect x="454" y="218" width="90" height="14" rx="3" class="soft"/><rect x="582" y="218" width="70" height="14" rx="3" class="soft"/><rect x="690" y="218" width="70" height="14" rx="3" class="soft"/><rect x="800" y="218" width="110" height="14" rx="3" class="soft"/><rect x="948" y="218" width="90" height="14" rx="3" class="soft"/>
+  </g>
+
+  <!-- Mobile wireframes -->
+  <g transform="translate(60 2310)">
+    <text x="0" y="-20" class="txt h">16. Mobile Dashboard</text>
+    <rect width="390" height="620" rx="28" class="page"/>
+    <rect x="0" y="0" width="390" height="76" rx="28" class="frame"/><rect x="18" y="20" width="40" height="34" rx="5" class="box"/><rect x="78" y="22" width="130" height="18" rx="3" class="dark"/><rect x="78" y="46" width="200" height="12" rx="3" class="soft"/>
+    <rect x="20" y="105" width="350" height="82" rx="7" class="frame"/><rect x="38" y="128" width="42" height="42" rx="6" class="dark"/><rect x="96" y="130" width="130" height="14" rx="3" class="soft"/><rect x="96" y="156" width="34" height="22" rx="3" class="dark"/>
+    <rect x="20" y="205" width="350" height="82" rx="7" class="frame"/><rect x="38" y="228" width="42" height="42" rx="6" class="dark"/><rect x="96" y="230" width="150" height="14" rx="3" class="soft"/><rect x="96" y="256" width="34" height="22" rx="3" class="dark"/>
+    <rect x="20" y="310" width="350" height="205" rx="7" class="frame"/><rect x="38" y="338" width="150" height="18" rx="3" class="dark"/><line x1="38" y1="376" x2="352" y2="376" class="line"/><rect x="38" y="404" width="170" height="14" rx="3" class="soft"/><rect x="322" y="404" width="28" height="18" rx="3" class="dark"/>
+  </g>
+  <g transform="translate(500 2310)">
+    <text x="0" y="-20" class="txt h">17. Mobile Offcanvas</text>
+    <rect width="390" height="620" rx="28" fill="#d1d5db"/>
+    <rect width="300" height="620" rx="24" class="dark"/><rect x="280" width="20" height="620" class="dark"/>
+    <text x="26" y="50" class="txt h">Brand</text><text x="260" y="50" class="txt h">×</text>
+    <rect x="24" y="88" width="252" height="40" rx="5" class="box"/><text x="50" y="113" class="txt s">Dashboard</text>
+    <text x="26" y="170" class="muted xs">MASTER DATA</text><text x="50" y="214" class="txt s">Kategori</text><text x="50" y="258" class="txt s">Barang</text><text x="50" y="302" class="txt s">Pengguna</text>
+    <text x="26" y="360" class="muted xs">TRANSAKSI</text><text x="50" y="404" class="txt s">Stok Masuk/Keluar</text>
+    <text x="26" y="462" class="muted xs">LAPORAN</text><text x="50" y="506" class="txt s">Mutasi Stok</text>
+  </g>
+  <g transform="translate(940 2310)">
+    <text x="0" y="-20" class="txt h">18. Mobile Form</text>
+    <rect width="390" height="620" rx="28" class="page"/>
+    <rect width="390" height="76" rx="28" class="frame"/><rect x="18" y="20" width="40" height="34" rx="5" class="box"/><rect x="78" y="26" width="170" height="18" rx="3" class="dark"/>
+    <rect x="20" y="105" width="350" height="480" rx="7" class="frame"/>
+    <rect x="38" y="134" width="170" height="20" rx="3" class="dark"/>
+    <text x="38" y="196" class="txt s">Barang</text><rect x="38" y="208" width="314" height="36" rx="4" class="box"/>
+    <text x="38" y="278" class="txt s">Tipe Transaksi</text><rect x="38" y="290" width="314" height="36" rx="4" class="box"/>
+    <text x="38" y="360" class="txt s">Jumlah</text><rect x="38" y="372" width="314" height="36" rx="4" class="box"/>
+    <text x="38" y="442" class="txt s">Tanggal</text><rect x="38" y="454" width="314" height="36" rx="4" class="box"/>
+    <rect x="38" y="530" width="145" height="36" rx="5" class="dark"/>
+  </g>
+  <g transform="translate(1380 2310)">
+    <text x="0" y="-20" class="txt h">19. Mobile Laporan</text>
+    <rect width="390" height="620" rx="28" class="page"/>
+    <rect width="390" height="76" rx="28" class="frame"/><rect x="22" y="26" width="210" height="18" rx="3" class="dark"/>
+    <rect x="20" y="105" width="350" height="140" rx="7" class="frame"/><rect x="38" y="142" width="140" height="34" rx="4" class="box"/><rect x="198" y="142" width="140" height="34" rx="4" class="box"/><rect x="38" y="202" width="76" height="30" rx="5" class="dark"/>
+    <rect x="20" y="270" width="350" height="280" rx="7" class="frame"/><rect x="38" y="304" width="170" height="16" rx="3" class="dark"/><rect x="38" y="330" width="230" height="12" rx="3" class="soft"/><rect x="320" y="318" width="30" height="20" rx="3" class="dark"/><line x1="38" y1="370" x2="352" y2="370" class="line"/><rect x="38" y="405" width="170" height="16" rx="3" class="dark"/><rect x="38" y="431" width="230" height="12" rx="3" class="soft"/><rect x="320" y="419" width="30" height="20" rx="3" class="dark"/>
+  </g>
+</svg>
