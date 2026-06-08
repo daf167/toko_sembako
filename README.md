@@ -88,7 +88,8 @@ Pastikan sudah terpasang:
 - Git, jika menggunakan clone repository
 
 ## Cara Instalasi
-
+composer create-project laravel/laravel nama_project "10.*"
+composer create-project laravel/laravel:^10.0 nama-proyek-kamu
 Clone repository:
 
 ```bash
