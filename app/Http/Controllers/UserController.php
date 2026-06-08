@@ -37,7 +37,9 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-        $user->load('inventoryLogs.item');
+        $user->load([
+            'inventoryLogs' => fn ($query) => $query->with('item')->orderByDesc('date')->orderByDesc('created_at'),
+        ]);
 
         return view('master.users.show', compact('user'));
     }

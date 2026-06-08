@@ -14,7 +14,7 @@ class InventoryController extends Controller
     {
         return view('inventory.stock', [
             'items' => Item::with('category')->orderBy('name')->get(),
-            'logs' => InventoryLog::with('item', 'user')->latest()->limit(10)->get(),
+            'logs' => InventoryLog::with('item', 'user')->orderByDesc('date')->orderByDesc('created_at')->limit(10)->get(),
         ]);
     }
 

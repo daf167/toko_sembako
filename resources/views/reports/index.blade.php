@@ -14,11 +14,31 @@
                 <label class="form-label" for="end_date">End Date</label>
                 <input class="form-control" id="end_date" name="end_date" type="date" value="{{ $filters['end_date'] ?? '' }}">
             </div>
+            {{--
+            <div class="col-md-3">
+                <label class="form-label" for="type">Tipe Mutasi</label>
+                <select class="form-select" id="type" name="type">
+                    <option value="">Semua</option>
+                    <option value="masuk" @selected(($filters['type'] ?? '') === 'masuk')>Stok Masuk</option>
+                    <option value="keluar" @selected(($filters['type'] ?? '') === 'keluar')>Stok Keluar</option>
+                </select>
+            </div>
+            --}}
             <div class="col-md-4 d-flex gap-2">
                 <button class="btn btn-primary" type="submit"><i class="bi bi-funnel me-1"></i>Filter</button>
                 <a class="btn btn-outline-secondary" href="{{ route('reports.index') }}">Reset</a>
             </div>
         </form>
+        {{--
+        <div class="d-flex flex-column flex-md-row gap-2 mt-3">
+            <a class="btn btn-success btn-sm" href="{{ route('reports.export.csv', request()->only(['start_date', 'end_date', 'type'])) }}">
+                <i class="bi bi-filetype-csv me-1"></i>Export CSV
+            </a>
+            <a class="btn btn-danger btn-sm" href="{{ route('reports.export.pdf', request()->only(['start_date', 'end_date', 'type'])) }}">
+                <i class="bi bi-file-earmark-pdf me-1"></i>Export PDF
+            </a>
+        </div>
+        --}}
     </div>
 </div>
 <div class="table-wrap bg-white p-3">

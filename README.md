@@ -1,66 +1,251 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Aplikasi Persediaan Barang Toko Sembako
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi web berbasis Laravel 10 untuk mengelola persediaan barang toko sembako. Sistem ini mendukung pengelolaan master data, transaksi stok masuk dan stok keluar, laporan mutasi stok, serta pembatasan akses berdasarkan role pengguna.
 
-## About Laravel
+## Teknologi
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Laravel 10
+- PHP 8.1 atau lebih baru
+- MySQL atau MariaDB
+- Bootstrap 5
+- Bootstrap Icons
+- Blade Template Engine
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Fitur Utama
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Login dan logout pengguna
+- Hak akses berdasarkan role: Admin, Staff Inventory, dan Owner
+- Dashboard ringkasan stok
+- 5 stok tertinggi dan 5 stok terendah
+- Master data kategori
+- Master data barang atau produk
+- Master data pengguna
+- Transaksi stok masuk
+- Transaksi stok keluar
+- Validasi stok keluar agar tidak melebihi stok tersedia
+- Laporan mutasi stok dengan filter tanggal
+- Show entries dan pagination pada tabel
+- Riwayat transaksi tetap tersimpan walaupun produk dihapus
+- Pencatatan stok awal dan stok akhir pada setiap mutasi
+- Status barang otomatis berubah menjadi `tidak tersedia` jika stok 0
 
-## Learning Laravel
+## Hak Akses Role
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Admin
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- Dashboard
+- Master Data Kategori
+- Master Data Barang
+- Master Data Pengguna
+- Transaksi Stok Masuk/Keluar
+- Laporan Mutasi Stok
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Staff Inventory
 
-## Laravel Sponsors
+- Dashboard
+- Daftar Produk, hanya lihat
+- Transaksi Stok Masuk/Keluar
+- Laporan Mutasi Stok
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Owner
 
-### Premium Partners
+- Dashboard
+- Daftar Produk, hanya lihat
+- Laporan Mutasi Stok
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## Aturan Sistem
 
-## Contributing
+- Semua primary key menggunakan UUID, bukan auto increment.
+- Kategori tidak bisa dihapus jika masih memiliki barang dengan stok tersedia.
+- Barang tidak bisa dihapus jika stok masih tersedia.
+- Riwayat transaksi tidak hilang saat barang dihapus.
+- Jika barang sudah dihapus, laporan tetap menampilkan snapshot nama produk lama.
+- Setiap transaksi menyimpan `stock_before` dan `stock_after`.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Struktur Database Utama
 
-## Code of Conduct
+Tabel utama:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- `users`
+- `categories`
+- `items`
+- `inventory_logs`
 
-## Security Vulnerabilities
+Relasi:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- `categories.id` ke `items.category_id`
+- `items.id` ke `inventory_logs.item_id`
+- `users.id` ke `inventory_logs.user_id`
 
-## License
+## Kebutuhan Instalasi
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Pastikan sudah terpasang:
+
+- PHP 8.1+
+- Composer
+- MySQL/MariaDB
+- XAMPP, Laragon, atau server lokal sejenis
+- Git, jika menggunakan clone repository
+
+## Cara Instalasi
+
+Clone repository:
+
+```bash
+git clone https://github.com/daf167/toko_sembako.git
+cd toko_sembako
+```
+
+Install dependency Laravel:
+
+```bash
+composer install
+```
+
+Salin file environment:
+
+```bash
+cp .env.example .env
+```
+
+Generate application key:
+
+```bash
+php artisan key:generate
+```
+
+## Konfigurasi Database
+
+Buat database MySQL, misalnya:
+
+```sql
+CREATE DATABASE toko_sembako;
+```
+
+Lalu sesuaikan file `.env`:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=toko_sembako
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Jika memakai XAMPP dengan password MySQL kosong, biarkan `DB_PASSWORD=` kosong.
+
+## Migrasi dan Seeder
+
+Jalankan migrasi dan data awal:
+
+```bash
+php artisan migrate:fresh --seed
+```
+
+Perintah ini akan membuat ulang semua tabel dan mengisi akun demo.
+
+## Akun Demo
+
+Admin:
+
+```text
+Email: admin@example.com
+Password: password
+```
+
+Staff Inventory:
+
+```text
+Email: staff@example.com
+Password: password
+```
+
+Owner:
+
+```text
+Email: owner@example.com
+Password: password
+```
+
+## Menjalankan Aplikasi
+
+Jalankan server Laravel:
+
+```bash
+php artisan serve --host=127.0.0.1 --port=8000
+```
+
+Buka browser:
+
+```text
+http://127.0.0.1:8000
+```
+
+## Menjalankan Test
+
+```bash
+php artisan test
+```
+
+## Catatan Fitur Export Laporan
+
+Fitur export CSV dan PDF untuk laporan mutasi stok sudah disiapkan di `ReportController`, tetapi saat ini route dan tombol di view dinonaktifkan dengan komentar.
+
+Untuk mengaktifkan kembali:
+
+1. Buka komentar route di `routes/web.php`.
+2. Buka komentar tombol export di `resources/views/reports/index.blade.php`.
+3. Jalankan:
+
+```bash
+php artisan route:clear
+php artisan view:clear
+```
+
+## Catatan Filter Tipe Mutasi
+
+Filter tipe mutasi `masuk` dan `keluar` sudah tersedia di controller, tetapi dropdown UI di view masih dikomentari.
+
+Untuk mengaktifkan kembali, buka komentar bagian filter `Tipe Mutasi` di:
+
+```text
+resources/views/reports/index.blade.php
+```
+
+Lalu jalankan:
+
+```bash
+php artisan view:clear
+```
+
+## Dokumentasi Tambahan
+
+Folder `docs` berisi beberapa dokumen pendukung, seperti:
+
+- Mockup Figma dalam format SVG
+- Wireframe Figma dalam format SVG
+- Dokumentasi blackbox testing dalam format Excel
+
+## Troubleshooting
+
+Jika muncul error:
+
+```text
+Could not open input file: artisan
+```
+
+Pastikan terminal berada di folder project Laravel yang memiliki file `artisan`.
+
+Jika port 8000 sudah digunakan:
+
+```bash
+php artisan serve --host=127.0.0.1 --port=8001
+```
+
+Jika konfigurasi `.env` tidak terbaca:
+
+```bash
+php artisan config:clear
+php artisan cache:clear
+```

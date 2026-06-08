@@ -34,7 +34,10 @@ class ItemController extends Controller
 
     public function show(Item $item)
     {
-        $item->load('category', 'inventoryLogs.user');
+        $item->load([
+            'category',
+            'inventoryLogs' => fn ($query) => $query->with('user')->orderByDesc('date')->orderByDesc('created_at'),
+        ]);
 
         return view('master.items.show', compact('item'));
     }
